@@ -1,10 +1,11 @@
 {
     "name": "sf-toolkit-mcp",
     "version": "1.0.0",
-    "main": "src/index.js",
+    "main": "dist/index.js",
     "type": "commonjs",
     "scripts": {
-        "start": "node index.js"
+        "start": "node src/index.js",
+        "build": "node build.js"
     },
     "keywords": [],
     "author": "Guillaume Rebmann",
@@ -18,9 +19,14 @@
     ],
     "dependencies": {
         "@modelcontextprotocol/sdk": "^1.12.0",
-        "zod": "^3.25.30",
+        "dotenv": "^16.5.0",
+        "express": "^4.18.2",
         "jsforce": "^3.8.2",
-        "express": "^4.18.2"
+        "zod": "^3.25.30"
+    },
+    "devDependencies": {
+        "webpack": "^5.91.0",
+        "webpack-node-externals": "^3.0.0"
     },
     "repository": {
         "type": "git",
