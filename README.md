@@ -31,14 +31,45 @@ Model Context Protocol (MCP) SDK and server for the Salesforce Toolkit (SF Toolk
    - `API_PORT` (default: `12346`)
    - `OAUTH_DISABLED` (default: `false`)
 
+## Build
+
+Before running as a CLI or using with `npx`, build the project:
+```sh
+npm run build
+```
+This will generate the bundled output in the `dist/` directory.
+
 ## Usage
 
+### As a Node.js Server
 Start the MCP server:
 ```sh
 npm start
 ```
 
-The server will start and communicate with the SF Toolkit via stdio. It registers a set of tools that can be invoked by the SF Toolkit or other MCP clients.
+### As a CLI (via npx or globally)
+You can run the server as a CLI tool after building:
+
+#### Locally (after build)
+```sh
+npx ./
+```
+Or, if you have linked the package globally:
+```sh
+sf-toolkit-mcp
+```
+
+#### After Publishing to npm
+Once published, you (or others) can run:
+```sh
+npx sf-toolkit-mcp
+```
+
+### Development Mode
+To start in watch mode (auto-rebuild on changes):
+```sh
+npm run dev
+```
 
 ## Architecture
 
