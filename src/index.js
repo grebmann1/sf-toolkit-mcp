@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 require('dotenv').config();
 // MCP server using Model Context Protocol SDK
 //const express = require('express');

@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/index.js',
@@ -14,11 +16,13 @@ module.exports = {
     ],
   },
   externals: [
-    // Exclude node_modules from the bundle
-    require('webpack-node-externals')(),
+    nodeExternals(),
   ],
   resolve: {
     extensions: ['.js'],
   },
   mode: 'production',
+  plugins: [
+    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true }),
+  ],
 }; 
